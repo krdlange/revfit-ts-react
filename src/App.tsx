@@ -1,10 +1,11 @@
+import Navbar from "@/scenes/navbar";
 
 // entry point for different pages in the app
 function App() {
 
   return (
     <div className="app bg-gray-20">
-      App
+      <Navbar />
     </div>
   )
 }
