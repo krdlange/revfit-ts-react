@@ -1,9 +1,10 @@
+import { SelectedPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
   page: string;
-  selectedPage: string;
-  setSelectedPage: (value: string) => void;
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Link = ({ 
@@ -11,7 +12,8 @@ const Link = ({
     selectedPage, 
     setSelectedPage,
 }: Props) => {
-  const lowerCasePage = page.toLowerCase().replace(/ /g, "");
+  //treat the text as SelectedPage value instead
+  const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
 
   return (
     // if selected page is equal to lowerCasePage, set text to color 500, otherwise set text color to as is (no class applied)
